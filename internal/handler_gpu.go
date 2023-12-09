@@ -26,3 +26,12 @@ func getVRAMValue() (int, error) {
 
 	return vram, nil
 }
+
+func rebootToBIOS() error {
+	_, err := exec.Command("systemctl", "reboot", "--firmware-setup").Output()
+	if err != nil {
+		return fmt.Errorf("error while trying to reboot")
+	}
+
+	return nil
+}

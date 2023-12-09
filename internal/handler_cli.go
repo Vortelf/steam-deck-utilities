@@ -181,3 +181,7 @@ func UseStockSettings() error {
 
 	return nil
 }
+
+func RebootToBIOS() error {
+	return rebootToBIOS()
+}

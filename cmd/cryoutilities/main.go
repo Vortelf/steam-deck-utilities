@@ -228,6 +228,17 @@ func main() {
 				return nil
 			},
 		},
+		{
+			Name:        "bios",
+			Description: "Reboot to BIOS",
+			ExecFunc: func(context.Context, []string) error {
+				err := internal.RebootToBIOS()
+				if err != nil {
+					return err
+				}
+				return nil
+			},
+		},
 	}
 
 	// If no args are passed, assume "gui"
